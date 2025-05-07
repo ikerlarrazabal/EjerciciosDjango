@@ -1,10 +1,7 @@
 from django.shortcuts import render
+from .models import Red
 
-# Create your views here.
-from django.http import HttpResponse
-from .models import Empresa
-#devuelve el listado de empresas
 def index(request):
- empresas = Empresa.objects.order_by('nombre')
- output = ', '.join([e.nombre for e in empresas])
- return HttpResponse(output)
+    redes = Red.objects.all()
+    context = {'redes': redes}
+    return render(request, 'myapp/index.html', context)

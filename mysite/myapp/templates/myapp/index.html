@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redes registradas</title>
+</head>
+<body>
+    <h1>Listado de redes</h1>
+    <ul>
+        {% for red in redes %}
+            <li>{{ red.nombre }} - IP: {{ red.ip }}</li>
+        {% empty %}
+            <li>No hay redes registradas.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
